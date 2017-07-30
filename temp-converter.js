@@ -3,6 +3,39 @@ console.log("temp-converter.js")
 let subBut = document.getElementById("subBut");
 let inputNum = Number(document.getElementById("sayIn").value);
 
+function convertC2F() {
+    // let convertC2F = {};
+    let finalFconver = inputNum * 1.8 + 32;
+
+    if (finalFconver <= 32) {
+        console.log("blue");
+
+    } else if (finalFconver >= 90) {
+        console.log("red");
+        
+    }else{
+        console.log("green");
+    }
+}
+
+function convertF2C() {
+    finalCconver = (inputNum - 32) * .5556;
+    // let convertF2C = {};
+    if (finalCconver <= 0) {
+        console.log("blue");
+        
+    } else if (finalCconver >= 32) {
+        console.log("red");
+
+    }else{
+        console.log("green");
+    }
+}
+
+
+
+
+
 subBut.addEventListener("click", function() {
     
     let whichTemp;
@@ -17,54 +50,19 @@ subBut.addEventListener("click", function() {
     }
     console.log("whichTemp", whichTemp);
 
-
-
-
-
     console.log("taco"); 
 
     debugger;
 
     if (whichTemp === "celsius") {
-        function convertF2C(finalCconver) {
-            finalCconver = (inputNum - 32) * .5556;
-            // let convertF2C = {};
-            if (finalCconver <= 0) {
-                //color blue
-
-            } else if (finalCconver >= 32) {
-                //color red
-
-            }else{
-                //color green;
-            }
-
-            console.log("taco2"); 
-
-            return finalCconver;
-        }
+        convertF2C();
 
     } else if (whichTemp === "fahrenheit") {
-
-        function convertC2F(finalFconver) {
-            // let convertC2F = {};
-            let finalFconver = inputNum * 1.8 + 32;
-
-            if (finalFconver <= 32) {
-                //color blue
-
-            } else if (finalFconver >= 90) {
-                //color red
-                
-            }else{
-                //color green
-            }
+        convertC2F();
 
             console.log("taco3"); 
-            return finalFconver;  
         }
-    };
-    
+        
     console.log("taco4");   
     
 });
